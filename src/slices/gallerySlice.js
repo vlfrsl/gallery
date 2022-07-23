@@ -3,6 +3,7 @@ import { fetchImages } from "../services/services";
 
 const initialState = {
   status: "idle",
+  images: [],
 };
 
 export const getImages = createAsyncThunk("getImages", async () => {
@@ -23,6 +24,7 @@ export const gallerySlice = createSlice({
         state.status = "loading";
       })
       .addCase(getImages.fulfilled, (state, action) => {
+        state.images = [...state.images, ...action.payload];
         state.status = "idle";
         console.log("loaded");
         console.log(action.payload);
