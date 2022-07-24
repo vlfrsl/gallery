@@ -1,8 +1,12 @@
 
 .mainWrapper {
-  //background: red;
+  display: flex;
+  justify-content: center;
 
+  //padding: 20px;
   min-height: 100vh;
-  width: 100%;
+  //width: 100%;
   height: 100%;
+
+  background: #daf3fd;
 }
