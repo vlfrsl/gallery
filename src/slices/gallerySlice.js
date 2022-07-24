@@ -6,10 +6,19 @@ const initialState = {
   images: [],
 };
 
-export const getImages = createAsyncThunk("getImages", async () => {
-  const response = await fetchImages(); //await service.getImages()
+export const getImages = createAsyncThunk("getImages", async (limit, page) => {
+  const response = await fetchImages(limit, page); //await service.getImages()
   return response;
 });
+
+const createChunks = (arr) => {
+  let size = 5; //размер подмассива
+  let subarray = []; //массив в который будет выведен результат.
+  for (let i = 0; i < Math.ceil(arr.length / size); i++) {
+    subarray[i] = arr.slice(i * size, i * size + size);
+  }
+  return subarray;
+};
 
 export const gallerySlice = createSlice({
   name: "gallery",
@@ -24,10 +33,12 @@ export const gallerySlice = createSlice({
         state.status = "loading";
       })
       .addCase(getImages.fulfilled, (state, action) => {
+        // const chunks = createChunks(action.payload);
         state.images = [...state.images, ...action.payload];
+
         state.status = "idle";
         console.log("loaded");
-        console.log(action.payload);
+        // console.log(action.payload);
       });
   },
 });

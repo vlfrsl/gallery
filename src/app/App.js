@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./styles/app.module.scss";
 import { Route, Routes } from "react-router-dom";
 
@@ -10,7 +10,12 @@ import { useDispatch } from "react-redux";
 
 function App() {
   const dispatch = useDispatch();
-  dispatch(getImages(10, 0));
+  const [firstFetch, setFirstFetch] = useState(true);
+
+  if (firstFetch) {
+    // dispatch(getImages(20, 0));
+    setFirstFetch(false);
+  }
 
   return (
     <div className={styles.mainWrapper}>

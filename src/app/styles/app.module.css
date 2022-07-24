@@ -1,7 +1,9 @@
 .mainWrapper {
+  display: flex;
+  justify-content: center;
   min-height: 100vh;
-  width: 100%;
   height: 100%;
+  background: #daf3fd;
 }
 
 /*# sourceMappingURL=app.module.css.map */
