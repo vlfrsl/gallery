@@ -1,19 +1,23 @@
 import React from "react";
 import styles from "./styles/image.module.scss";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function Image({ data }) {
-  // console.log("data", data);
+  const navigate = useNavigate();
+
+  const goToImage = (id) =>
+    navigate({
+      pathname: "/image",
+      search: `?id=${id}`,
+    });
+
   return (
-    <div className={styles.imageWrapper}>
+    <div className={styles.imageWrapper} onClick={() => goToImage(data.id)}>
       <img src={data.url} alt="" />
       <div className={styles.overlay}>
-        <Link className={styles.link} to="/image">
-          <button>GO to image</button>
-          {/*<div className={styles.btnWrapper}>*/}
-          {/*  <span className={styles.btn}>GO to Photo</span>*/}
-          {/*</div>*/}
-        </Link>
+        <div className={styles.textWrapper}>
+          <span>Go to image</span>
+        </div>
       </div>
     </div>
   );

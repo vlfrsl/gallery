@@ -26,9 +26,24 @@
     top: 0;
     justify-content: center;
 
+
     background: rgba(124, 119, 119, 0.5);
 
     transition: ease 0.3s;
+
+    .textWrapper {
+      align-self: center;
+
+      padding: 10px 20px;
+      background: #cecdcd;
+      border-radius: 20px;
+
+      span {
+        font-family: Jost, sans-serif;
+      };
+    }
+
+
 
   }
 
@@ -37,36 +52,22 @@
       opacity: 100%;
       display: flex;
       transition: ease 0.3s;
-    }
-  }
-}
-
-.link {
-  text-decoration: none;
-
-  width: 100%;
-  height: 100%;
-  display: flex;
-
-  justify-content: center;
-
-  button{
-    align-self: center;
-
-    border: none;
-    border-radius: 20px;
-
-    background: #cecdcd;
-    padding: 10px 20px;
-
-    font-family: Jost, sans-serif;
-
-    &:hover {
       cursor: pointer;
     }
-
   }
 }
+button{
+  align-self: center;
 
+  border: none;
+  border-radius: 20px;
 
+  background: #cecdcd;
+  padding: 10px 20px;
 
+  font-family: Jost, sans-serif;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

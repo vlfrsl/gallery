@@ -21,20 +21,23 @@
   background: rgba(124, 119, 119, 0.5);
   transition: ease 0.3s;
 }
+.imageWrapper .overlay .textWrapper {
+  align-self: center;
+  padding: 10px 20px;
+  background: #cecdcd;
+  border-radius: 20px;
+}
+.imageWrapper .overlay .textWrapper span {
+  font-family: Jost, sans-serif;
+}
 .imageWrapper:hover .overlay {
   opacity: 100%;
   display: flex;
   transition: ease 0.3s;
+  cursor: pointer;
 }
 
-.link {
-  text-decoration: none;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
-.link button {
+button {
   align-self: center;
   border: none;
   border-radius: 20px;
@@ -42,7 +45,7 @@
   padding: 10px 20px;
   font-family: Jost, sans-serif;
 }
-.link button:hover {
+button:hover {
   cursor: pointer;
 }
 

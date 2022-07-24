@@ -10,18 +10,12 @@ import { useDispatch } from "react-redux";
 
 function App() {
   const dispatch = useDispatch();
-  const [firstFetch, setFirstFetch] = useState(true);
-
-  if (firstFetch) {
-    // dispatch(getImages(20, 0));
-    setFirstFetch(false);
-  }
 
   return (
     <div className={styles.mainWrapper}>
       <Routes>
         <Route path="/" element={<GalleryPage />} />
-        <Route path="image" element={<ImagePage />} />
+        <Route path="/image" element={<ImagePage />} />
       </Routes>
     </div>
   );
