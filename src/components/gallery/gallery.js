@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Image } from "../image/image";
 import { getImages } from "../../slices/gallerySlice";
 import { GalleryItem } from "../galleryItem/galleryItem";
+import { Loading } from "../loading/loading";
 
 export function Gallery() {
   const dispatch = useDispatch();
@@ -51,16 +52,7 @@ export function Gallery() {
           return <GalleryItem key={idx} data={image} />;
         })}
       </div>
-      {loading === "loading" && (
-        <div
-          style={{
-            background: "green",
-            // height: 100 + "vh",
-          }}
-        >
-          <h1>Loading</h1>
-        </div>
-      )}
+      {loading === "loading" && <Loading />}
     </div>
   );
 }

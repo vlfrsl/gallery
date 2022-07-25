@@ -1,14 +1,10 @@
 
 .sizeBar {
-  //margin: 10px 0;
-
   border-radius: 10px;
 
   background: #e1e1e1;
   width: 100%;
   display: flex;
-
-
 
   >div {
     margin: 10px;
@@ -17,9 +13,6 @@
 
   button{
     background: white;
-    //&:hover {
-    //  background: #daf3fd;
-    //}
 
     &:hover{
       background: #cecdcd;
@@ -35,10 +28,12 @@
   padding: 5px;
   border-radius: 5px;
 
+  width: 170px;
   align-self: center;
   select {
     background: #e1e1e1;
-    width: 45%;
+    //width: 45%;
+    width: 80px;
     padding: 5px;
     font-family: Jost, sans-serif;
 
@@ -50,6 +45,7 @@
     width: 45%;
 
     button{
+      width: 100%;
       padding: 10px 10px;
 
       background: #e1e1e1;
@@ -57,8 +53,6 @@
       &:hover{
         background: #cecdcd;
       }
-
     }
-
   }
 }

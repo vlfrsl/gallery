@@ -4,6 +4,7 @@ import { useQuery } from "../hooks/useQuery";
 import { useDispatch, useSelector } from "react-redux";
 import { getImage } from "../slices/gallerySlice";
 import { SizeBar } from "../components/imageSizeBar/sizeBar";
+import { Loading } from "../components/loading/loading";
 
 export function FullSizeImage() {
   const query = useQuery();
@@ -21,15 +22,7 @@ export function FullSizeImage() {
   return (
     <div className={styles.mainWrapper}>
       <div className={styles.imageWindowWrapper}>
-        {status === "loading" && (
-          <div
-            style={{
-              width: 100 + "%",
-            }}
-          >
-            <h1>Loading</h1>
-          </div>
-        )}
+        {status === "loading" && <Loading />}
 
         {Object.keys(selectedImage).length > 0 && status !== "loading" && (
           <div className={styles.imageWindow}>
