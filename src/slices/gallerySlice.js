@@ -1,9 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { fetchImages } from "../services/services";
+import { fetchImage, fetchImages } from "../services/services";
 
 const initialState = {
   status: "idle",
   images: [],
+  chosenImage: {},
+  chosenImageSizes: [],
+  currentSize: "small",
 };
 
 export const getImages = createAsyncThunk("getImages", async (limit, page) => {
@@ -11,20 +14,20 @@ export const getImages = createAsyncThunk("getImages", async (limit, page) => {
   return response;
 });
 
-const createChunks = (arr) => {
-  let size = 5; //размер подмассива
-  let subarray = []; //массив в который будет выведен результат.
-  for (let i = 0; i < Math.ceil(arr.length / size); i++) {
-    subarray[i] = arr.slice(i * size, i * size + size);
-  }
-  return subarray;
-};
+export const getImage = createAsyncThunk("getImage", async (id) => {
+  const response = await fetchImage(id); //await service.getImages()
+  return response;
+});
 
 export const gallerySlice = createSlice({
   name: "gallery",
   initialState,
 
-  reducers: {},
+  reducers: {
+    setCurrentSize: (state, action) => {
+      state.currentSize = action.payload;
+    },
+  },
 
   extraReducers: (builder) => {
     builder
@@ -33,12 +36,22 @@ export const gallerySlice = createSlice({
         state.status = "loading";
       })
       .addCase(getImages.fulfilled, (state, action) => {
-        // const chunks = createChunks(action.payload);
+        console.log(action.payload);
         state.images = [...state.images, ...action.payload];
+        state.status = "idle";
+        console.log("loaded");
+      })
+
+      .addCase(getImage.pending, (state) => {
+        console.log("loading");
+        state.status = "loading";
+      })
+      .addCase(getImage.fulfilled, (state, action) => {
+        state.chosenImage = action.payload[0];
+        state.chosenImageSizes = Object.keys(action.payload[0].urls);
 
         state.status = "idle";
         console.log("loaded");
-        // console.log(action.payload);
       });
   },
 });

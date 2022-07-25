@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 export function Image({ data }) {
   const navigate = useNavigate();
+  const imageId = data.id;
 
   const goToImage = (id) =>
     navigate({
@@ -13,7 +14,7 @@ export function Image({ data }) {
 
   return (
     <div className={styles.imageWrapper} onClick={() => goToImage(data.id)}>
-      <img src={data.url} alt="" />
+      <img src={data.urls.small} alt="" />
       <div className={styles.overlay}>
         <div className={styles.textWrapper}>
           <span>Go to image</span>

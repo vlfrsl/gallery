@@ -1,0 +1,60 @@
+
+.sizeBar {
+  //background: rgba(124, 119, 119, 0.5);
+  background: #e1e1e1;
+  width: 100%;
+  display: flex;
+
+
+  >div {
+    margin: 10px;
+    align-self: center;
+  }
+
+  button{
+    background: white;
+    //&:hover {
+    //  background: #daf3fd;
+    //}
+
+    &:hover{
+      background: #cecdcd;
+    }
+
+  }
+}
+
+.sizeSelectorWrapper {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 5px;
+  border-radius: 5px;
+
+  align-self: center;
+  select {
+    background: #e1e1e1;
+    width: 45%;
+    padding: 5px;
+    font-family: Jost, sans-serif;
+
+    border-radius: 5px;
+    border: none;
+  }
+
+  .setSize {
+    width: 45%;
+
+    button{
+      padding: 10px 10px;
+
+      background: #e1e1e1;
+
+      &:hover{
+        background: #cecdcd;
+      }
+
+    }
+
+  }
+}

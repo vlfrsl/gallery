@@ -1,0 +1,22 @@
+
+.mainWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.imageWrapper {
+  align-self: center;
+  justify-self: center;
+
+  max-width: 90%;
+  background: white;
+
+  max-height: 80vh;
+  overflow: auto;
+
+  padding: 10px;
+  margin: 10px;
+
+  border-radius: 10px;
+
+}
