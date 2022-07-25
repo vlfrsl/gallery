@@ -1,0 +1,18 @@
+.pageWrapper {
+  display: flex;
+  width: 100%;
+  max-height: 100%;
+  justify-content: center;
+}
+
+.pageGalleryWrapper {
+  width: 95%;
+  height: 100%;
+}
+
+.pageImageWrapper {
+  width: 95%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=pages.module.css.map */

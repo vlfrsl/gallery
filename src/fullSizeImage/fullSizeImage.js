@@ -20,9 +20,7 @@ export function FullSizeImage() {
 
   return (
     <div className={styles.mainWrapper}>
-      <SizeBar />
-
-      <div className={styles.imageWrapper}>
+      <div className={styles.imageWindowWrapper}>
         {status === "loading" && (
           <div
             style={{
@@ -32,8 +30,11 @@ export function FullSizeImage() {
             <h1>Loading</h1>
           </div>
         )}
+
         {Object.keys(selectedImage).length > 0 && status !== "loading" && (
-          <img src={selectedImage.urls[sizeSelected]} alt="" />
+          <div className={styles.imageWindow}>
+            <img src={selectedImage.urls[sizeSelected]} alt="" />
+          </div>
         )}
       </div>
     </div>

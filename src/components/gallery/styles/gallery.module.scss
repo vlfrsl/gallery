@@ -1,7 +1,7 @@
 
 .gallery {
-  width: 85%;
-  max-width: 1400px;
+  width: 100%;
+  //max-width: 1400px;
   height: 100%;
   background: white;
 
@@ -13,7 +13,6 @@
   display: flex;
 
   align-self: center;
-  width: 95%;
   flex-wrap: wrap;
 
   justify-content: space-around;
@@ -22,7 +21,7 @@
 
 @media all and (max-width: 768px) {
   .gallery {
-    width: 85%;
+    //width: 85%;
   }
 
 }

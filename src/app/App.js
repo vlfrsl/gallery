@@ -7,6 +7,7 @@ import { ImagePage } from "../pages/imagePage";
 import { useEffect } from "react";
 import { getImages } from "../slices/gallerySlice";
 import { useDispatch } from "react-redux";
+import { WrapperPage } from "../pages/wrapperPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -14,8 +15,10 @@ function App() {
   return (
     <div className={styles.mainWrapper}>
       <Routes>
-        <Route path="/" element={<GalleryPage />} />
-        <Route path="/image" element={<ImagePage />} />
+        <Route path="/" element={<WrapperPage />}>
+          <Route index element={<GalleryPage />} />
+          <Route path="/image" element={<ImagePage />} />
+        </Route>
       </Routes>
     </div>
   );

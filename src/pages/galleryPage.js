@@ -1,14 +1,14 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
 import { Gallery } from "../components/gallery/gallery";
-import { useDispatch } from "react-redux";
-import { getImages } from "../slices/gallerySlice";
-import { useEffect } from "react";
+import { Header } from "../header/header";
+
+import styles from "./styles/pages.module.scss";
 
 export function GalleryPage() {
   return (
-    // <div>
-    <Gallery />
-    // </div>
+    <div className={styles.pageGalleryWrapper}>
+      <Header />
+      <Gallery />
+    </div>
   );
 }

@@ -1,9 +1,13 @@
 
 .sizeBar {
-  //background: rgba(124, 119, 119, 0.5);
+  //margin: 10px 0;
+
+  border-radius: 10px;
+
   background: #e1e1e1;
   width: 100%;
   display: flex;
+
 
 
   >div {

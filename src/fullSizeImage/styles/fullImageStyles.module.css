@@ -4,12 +4,12 @@
   flex-direction: column;
 }
 
-.imageWrapper {
+.imageWindowWrapper {
   align-self: center;
   justify-self: center;
   max-width: 90%;
   background: white;
-  max-height: 80vh;
+  max-height: 75vh;
   overflow: auto;
   padding: 10px;
   margin: 10px;

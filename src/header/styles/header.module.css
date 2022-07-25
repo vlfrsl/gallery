@@ -1,0 +1,27 @@
+.headerWrapper {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.greetings {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.greetings > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Jost, sans-serif;
+  font-size: 1.1em;
+}
+.greetings > div a {
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+/*# sourceMappingURL=header.module.css.map */
