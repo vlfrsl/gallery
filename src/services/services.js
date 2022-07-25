@@ -1,24 +1,42 @@
-export const fetchImages = async (limit, page) => {
+export const fetchImages = async ({ limit, page }) => {
   //    `https://jsonplaceholder.typicode.com/photos?_limit=${limit}&_page=${page}
-  // return await fetch(
-  //   `https://api.unsplash.com/photos/?client_id=Y2DCdUt4uXfZWb54_QeW2nIpK_x8ZGOCf6iEUk0qvWI`
-  // ).then((response) => response.json());
-  return new Promise((resolve) => {
-    return setTimeout(() => resolve(fakeData), 1000);
+  console.log("limit", limit);
+  console.log("page", page);
+  return await fetch(
+    `https://api.unsplash.com/photos/?limit=${limit}&page=${page}&client_id=Y2DCdUt4uXfZWb54_QeW2nIpK_x8ZGOCf6iEUk0qvWI`
+  ).then((response) => {
+    if (response.status !== 200) {
+      throw Error;
+    }
+    return response.json();
   });
+  // return new Promise((resolve, reject) => {
+  //   return setTimeout(() => resolve(fakeData), 1000);
+  // });
 };
 
 export const fetchImage = async (id) => {
+  // photos/:id
+  console.log(id);
+  return await fetch(
+    `https://api.unsplash.com/photos/${id}?client_id=Y2DCdUt4uXfZWb54_QeW2nIpK_x8ZGOCf6iEUk0qvWI`
+  ).then((response) => {
+    console.log("response", response);
+    if (response.status !== 200) {
+      throw Error;
+    }
+    return response.json();
+  });
   // return await fetch(
   //   `https://jsonplaceholder.typicode.com/photos?id=${id}`
   // ).then((response) => response.json());
 
-  return new Promise((resolve) => {
-    let image = fakeData.filter((dataObj) => {
-      return dataObj.id === id;
-    });
-    return setTimeout(() => resolve(image), 1000);
-  });
+  // return new Promise((resolve, reject) => {
+  //   let image = fakeData.filter((dataObj) => {
+  //     return dataObj.id === id;
+  //   });
+  //   return setTimeout(() => resolve(image), 1000);
+  // });
 };
 
 var fakeData = [

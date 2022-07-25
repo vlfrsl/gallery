@@ -5,6 +5,7 @@ import { Image } from "../image/image";
 import { getImages } from "../../slices/gallerySlice";
 import { GalleryItem } from "../galleryItem/galleryItem";
 import { Loading } from "../loading/loading";
+import { Error } from "../errorComponent/error";
 
 export function Gallery() {
   const dispatch = useDispatch();
@@ -21,16 +22,20 @@ export function Gallery() {
 
   const [page, setPage] = useState(1);
   const [fetching, setFetching] = useState(true);
-  const [canBeFetched, setCanBeFetched] = useState(true);
-  const [trackScroll, setTrackScroll] = useState(false);
+  const [fetchFailed, setFetchFailed] = useState(false);
 
   useEffect(() => {
     if (fetching) {
-      dispatch(getImages(10, page)).then((data) => {
-        // console.log(data);
-        setFetching(false);
-      });
-      setPage(page + 1);
+      dispatch(getImages({ limit: 10, page: page }))
+        .unwrap()
+        .then(() => {
+          setFetching(false);
+          setPage(page + 1);
+        });
+      // .catch(() => {
+      //   setFetchFailed(true);
+      //   console.log("gallery Catch");
+      // });
     }
   }, [fetching]);
 
@@ -39,22 +44,27 @@ export function Gallery() {
   // }, [fetching]);
 
   const scrollHandler = (e) => {
-    if (
-      e.target.documentElement.scrollHeight -
-        (e.target.documentElement.scrollTop + window.innerHeight) <
-      100
-    ) {
-      setFetching(true);
+    if (!fetchFailed) {
+      if (
+        e.target.documentElement.scrollHeight -
+          (e.target.documentElement.scrollTop + window.innerHeight) <
+        100
+      ) {
+        setFetching(true);
+      }
     }
   };
 
   return (
     <div className={styles.gallery}>
+      {loading === "failed" && <Error />}
+
       <div className={styles.items}>
         {images.map((image, idx) => {
           return <GalleryItem key={idx} data={image} />;
         })}
       </div>
+
       {loading === "loading" && <Loading />}
     </div>
   );

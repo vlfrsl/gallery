@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getImage } from "../slices/gallerySlice";
 import { SizeBar } from "../components/imageSizeBar/sizeBar";
 import { Loading } from "../components/loading/loading";
+import { Error } from "../components/errorComponent/error";
 
 export function FullSizeImage() {
   const query = useQuery();
@@ -23,8 +24,9 @@ export function FullSizeImage() {
     <div className={styles.mainWrapper}>
       <div className={styles.imageWindowWrapper}>
         {status === "loading" && <Loading />}
-
-        {Object.keys(selectedImage).length > 0 && status !== "loading" && (
+        {status === "failed" && <Error />}
+        {Object.keys(selectedImage).length > 0 && status === "idle" && (
+          // <div>"hi</div>
           <div className={styles.imageWindow}>
             <img src={selectedImage.urls[sizeSelected]} alt="" />
           </div>
