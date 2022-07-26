@@ -23,7 +23,7 @@ export function SizeBar() {
       </div>
       <div className={styles.sizeSelectorWrapper}>
         <select
-          value={currentSize}
+          value={sizeChosen}
           onChange={(e) => {
             setSizeChosen(e.target.value);
           }}
