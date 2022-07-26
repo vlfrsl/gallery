@@ -1,0 +1,45 @@
+.itemWrapper {
+  width: 15%;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  background: #efefef;
+  margin: 10px 5px;
+  padding: 20px;
+  border-radius: 20px;
+}
+.itemWrapper .imageBlock {
+  flex: 1;
+  min-width: 150px;
+  border-radius: 20px;
+}
+.itemWrapper .infoBlock {
+  flex: 1 135px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 20px 20px;
+  padding: 10px;
+}
+.itemWrapper .infoBlock .name, .itemWrapper .infoBlock .date {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+}
+.itemWrapper .infoBlock .name span, .itemWrapper .infoBlock .date span {
+  font-size: 20px;
+  font-family: Jost, sans-serif;
+}
+
+@media all and (max-width: 540px) {
+  .itemWrapper {
+    width: 60%;
+  }
+}
+@media all and (max-width: 480px) {
+  .itemWrapper {
+    width: 80%;
+  }
+}
+
+/*# sourceMappingURL=item.module.css.map */

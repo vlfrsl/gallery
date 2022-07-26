@@ -1,0 +1,47 @@
+.sizeBar {
+  width: 100%;
+  display: flex;
+  border-radius: 10px;
+  background: #e1e1e1;
+}
+.sizeBar > div {
+  margin: 10px;
+  align-self: center;
+}
+.sizeBar button {
+  background: white;
+}
+.sizeBar button:hover {
+  background: #cecdcd;
+}
+
+.sizeSelectorWrapper {
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  background: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+.sizeSelectorWrapper select {
+  background: #e1e1e1;
+  width: 80px;
+  padding: 5px;
+  font-family: Jost, sans-serif;
+  border-radius: 5px;
+  border: none;
+}
+.sizeSelectorWrapper .setSize {
+  width: 45%;
+}
+.sizeSelectorWrapper .setSize button {
+  width: 100%;
+  padding: 10px 10px;
+  background: #e1e1e1;
+}
+.sizeSelectorWrapper .setSize button:hover {
+  background: #cecdcd;
+}
+
+/*# sourceMappingURL=sizeBar.module.css.map */

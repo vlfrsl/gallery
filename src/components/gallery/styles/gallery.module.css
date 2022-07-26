@@ -1,0 +1,16 @@
+.gallery {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 20px;
+}
+
+.items {
+  display: flex;
+  align-self: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/*# sourceMappingURL=gallery.module.css.map */

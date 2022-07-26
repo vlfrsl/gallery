@@ -1,0 +1,51 @@
+.imageWrapper {
+  height: 200px;
+  border-radius: inherit;
+  position: relative;
+}
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+.imageWrapper .overlay {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  background: rgba(124, 119, 119, 0.5);
+  transition: ease 0.3s;
+}
+.imageWrapper .overlay .textWrapper {
+  align-self: center;
+  padding: 10px 20px;
+  background: #cecdcd;
+  border-radius: 20px;
+}
+.imageWrapper .overlay .textWrapper span {
+  font-family: Jost, sans-serif;
+}
+.imageWrapper:hover .overlay {
+  opacity: 100%;
+  display: flex;
+  transition: ease 0.3s;
+  cursor: pointer;
+}
+
+button {
+  align-self: center;
+  border: none;
+  border-radius: 20px;
+  background: #cecdcd;
+  padding: 10px 20px;
+  font-family: Jost, sans-serif;
+}
+button:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=image.module.css.map */

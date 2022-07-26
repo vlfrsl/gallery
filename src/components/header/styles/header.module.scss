@@ -1,0 +1,32 @@
+
+.headerWrapper {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 10px;
+}
+
+.greetings {
+  width: 90%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  >div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: Jost, sans-serif;
+    font-size: 1.1em;
+
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0 5px;
+    }
+  }
+}

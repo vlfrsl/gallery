@@ -1,0 +1,19 @@
+.mainWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageWindowWrapper {
+  align-self: center;
+  justify-self: center;
+  max-width: 90%;
+  max-height: 75vh;
+  background: white;
+  overflow: auto;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=fullImageStyles.module.css.map */
