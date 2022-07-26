@@ -9,14 +9,14 @@
   border-radius: inherit;
 }
 .imageWrapper .overlay {
-  display: flex;
-  opacity: 0;
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
   border-radius: 20px;
   position: absolute;
   top: 0;
-  justify-content: center;
   background: rgba(124, 119, 119, 0.5);
   transition: ease 0.3s;
 }

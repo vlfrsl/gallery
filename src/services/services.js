@@ -16,8 +16,6 @@ export const fetchImages = async ({ limit, page }) => {
 };
 
 export const fetchImage = async (id) => {
-  // photos/:id
-  console.log(id);
   return await fetch(
     `https://api.unsplash.com/photos/${id}?client_id=Y2DCdUt4uXfZWb54_QeW2nIpK_x8ZGOCf6iEUk0qvWI`
   ).then((response) => {
@@ -27,6 +25,7 @@ export const fetchImage = async (id) => {
     }
     return response.json();
   });
+
   // return await fetch(
   //   `https://jsonplaceholder.typicode.com/photos?id=${id}`
   // ).then((response) => response.json());

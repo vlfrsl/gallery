@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 export function Image({ data }) {
   const navigate = useNavigate();
-  const imageId = data.id;
 
   const goToImage = (id) =>
     navigate({

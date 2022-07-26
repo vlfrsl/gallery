@@ -1,9 +1,9 @@
 .gallery {
   width: 100%;
-  background: white;
-  border-radius: 20px;
   display: flex;
   flex-direction: column;
+  background: white;
+  border-radius: 20px;
 }
 
 .items {

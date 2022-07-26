@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles/gallery.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { Image } from "../image/image";
 import { getImages } from "../../slices/gallerySlice";
 import { GalleryItem } from "../galleryItem/galleryItem";
 import { Loading } from "../loading/loading";
@@ -22,7 +21,6 @@ export function Gallery() {
 
   const [page, setPage] = useState(1);
   const [fetching, setFetching] = useState(true);
-  const [fetchFailed, setFetchFailed] = useState(false);
 
   useEffect(() => {
     if (fetching) {
@@ -32,26 +30,16 @@ export function Gallery() {
           setFetching(false);
           setPage(page + 1);
         });
-      // .catch(() => {
-      //   setFetchFailed(true);
-      //   console.log("gallery Catch");
-      // });
     }
   }, [fetching]);
 
-  // useEffect(() => {
-  //   console.log("TRACK FETCHING");
-  // }, [fetching]);
-
   const scrollHandler = (e) => {
-    if (!fetchFailed) {
-      if (
-        e.target.documentElement.scrollHeight -
-          (e.target.documentElement.scrollTop + window.innerHeight) <
-        100
-      ) {
-        setFetching(true);
-      }
+    if (
+      e.target.documentElement.scrollHeight -
+        (e.target.documentElement.scrollTop + window.innerHeight) <
+      100
+    ) {
+      setFetching(true);
     }
   };
 

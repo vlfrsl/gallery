@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./styles/sizeBar.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+
 export function SizeBar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ export function SizeBar() {
       </div>
       <div className={styles.sizeSelectorWrapper}>
         <select
-          defaultValue={currentSize}
+          value={currentSize}
           onChange={(e) => {
             setSizeChosen(e.target.value);
           }}

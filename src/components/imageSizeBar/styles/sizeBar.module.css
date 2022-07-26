@@ -1,8 +1,8 @@
 .sizeBar {
-  border-radius: 10px;
-  background: #e1e1e1;
   width: 100%;
   display: flex;
+  border-radius: 10px;
+  background: #e1e1e1;
 }
 .sizeBar > div {
   margin: 10px;
@@ -16,13 +16,13 @@
 }
 
 .sizeSelectorWrapper {
+  width: 170px;
   display: flex;
   justify-content: space-between;
+  align-self: center;
   background: white;
   padding: 5px;
   border-radius: 5px;
-  width: 170px;
-  align-self: center;
 }
 .sizeSelectorWrapper select {
   background: #e1e1e1;

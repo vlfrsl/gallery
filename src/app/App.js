@@ -10,8 +10,6 @@ import { useDispatch } from "react-redux";
 import { WrapperPage } from "../pages/wrapperPage";
 
 function App() {
-  const dispatch = useDispatch();
-
   return (
     <div className={styles.mainWrapper}>
       <Routes>

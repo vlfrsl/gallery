@@ -1,12 +1,12 @@
 .itemWrapper {
   width: 15%;
   min-width: 200px;
+  display: flex;
+  flex-direction: column;
   background: #efefef;
   margin: 10px 5px;
-  display: flex;
-  border-radius: 20px;
   padding: 20px;
-  flex-direction: column;
+  border-radius: 20px;
 }
 .itemWrapper .imageBlock {
   flex: 1;
@@ -15,11 +15,11 @@
 }
 .itemWrapper .infoBlock {
   flex: 1 135px;
-  border-radius: 20px 20px;
-  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  border-radius: 20px 20px;
+  padding: 10px;
 }
 .itemWrapper .infoBlock .name, .itemWrapper .infoBlock .date {
   flex-wrap: wrap;
