@@ -16,8 +16,9 @@ export function SizeBar() {
   const [sizeChosen, setSizeChosen] = useState(currentSize);
   return (
     <div className={styles.sizeBar}>
-      <div className={styles.backBtn}>
+      <div className={styles.backBtnContainer}>
         <button
+          className={styles.backBtn}
           onClick={() => {
             navigate(-1);
           }}
@@ -43,6 +44,7 @@ export function SizeBar() {
 
         <div className={styles.setSize}>
           <button
+            className={styles.applyBtn}
             onClick={() => {
               dispatch({
                 type: "gallery/setCurrentSize",
