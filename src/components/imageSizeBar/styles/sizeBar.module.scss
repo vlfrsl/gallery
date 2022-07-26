@@ -11,13 +11,18 @@
     align-self: center;
   }
 
-  button{
-    background: white;
+  .backBtnContainer{
+    .backBtn {
+      background: white;
+      &:hover{
+        background: #6e6e6e;
+      }
 
-    &:hover{
-      background: #cecdcd;
+      &:active{
+        background: #1f1f1f;
+        color: white;
+      }
     }
-
   }
 }
 
@@ -44,15 +49,21 @@
   .setSize {
     width: 45%;
 
-    button{
+    .applyBtn{
       width: 100%;
       padding: 10px 10px;
 
       background: #e1e1e1;
 
       &:hover{
-        background: #cecdcd;
+        background: #6e6e6e;
+      }
+
+      &:active{
+        background: #1f1f1f;
+        color: white;
       }
     }
   }
 }
+

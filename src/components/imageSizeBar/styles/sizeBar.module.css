@@ -8,11 +8,15 @@
   margin: 10px;
   align-self: center;
 }
-.sizeBar button {
+.sizeBar .backBtnContainer .backBtn {
   background: white;
 }
-.sizeBar button:hover {
-  background: #cecdcd;
+.sizeBar .backBtnContainer .backBtn:hover {
+  background: #6e6e6e;
+}
+.sizeBar .backBtnContainer .backBtn:active {
+  background: #1f1f1f;
+  color: white;
 }
 
 .sizeSelectorWrapper {
@@ -35,13 +39,17 @@
 .sizeSelectorWrapper .setSize {
   width: 45%;
 }
-.sizeSelectorWrapper .setSize button {
+.sizeSelectorWrapper .setSize .applyBtn {
   width: 100%;
   padding: 10px 10px;
   background: #e1e1e1;
 }
-.sizeSelectorWrapper .setSize button:hover {
-  background: #cecdcd;
+.sizeSelectorWrapper .setSize .applyBtn:hover {
+  background: #6e6e6e;
+}
+.sizeSelectorWrapper .setSize .applyBtn:active {
+  background: #1f1f1f;
+  color: white;
 }
 
 /*# sourceMappingURL=sizeBar.module.css.map */
