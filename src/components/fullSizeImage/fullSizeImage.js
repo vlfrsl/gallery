@@ -4,7 +4,12 @@ import { useQuery } from "../../hooks/useQuery";
 import { useDispatch, useSelector } from "react-redux";
 import { Loading } from "../loading/loading";
 import { Error } from "../errorComponent/error";
-import { getImage } from "../../slices/gallerySlice";
+import {
+  getImage,
+  selectChosenImage,
+  selectCurrentSize,
+  selectStatus,
+} from "../../slices/gallerySlice";
 
 export function FullSizeImage() {
   const query = useQuery();
@@ -14,10 +19,10 @@ export function FullSizeImage() {
     dispatch(getImage(query.get("id")));
   }, []);
 
-  const status = useSelector((state) => state.gallery.status);
-  const sizeSelected = useSelector((state) => state.gallery.currentSize);
+  const status = useSelector(selectStatus);
+  const sizeSelected = useSelector(selectCurrentSize);
 
-  const selectedImage = useSelector((state) => state.gallery.chosenImage);
+  const selectedImage = useSelector(selectChosenImage);
 
   return (
     <div className={styles.mainWrapper}>

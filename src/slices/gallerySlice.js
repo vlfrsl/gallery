@@ -9,6 +9,12 @@ const initialState = {
   currentSize: "full",
 };
 
+export const selectImages = (state) => state.gallery.images;
+export const selectStatus = (state) => state.gallery.status;
+export const selectChosenImage = (state) => state.gallery.chosenImage;
+export const selectImagesSizes = (state) => state.gallery.chosenImageSizes;
+export const selectCurrentSize = (state) => state.gallery.currentSize;
+
 export const getImages = createAsyncThunk(
   "getImages",
   async (data, thunkAPI) => {

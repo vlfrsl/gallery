@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles/gallery.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { getImages } from "../../slices/gallerySlice";
+import {
+  getImages,
+  selectImages,
+  selectStatus,
+} from "../../slices/gallerySlice";
 import { GalleryItem } from "../galleryItem/galleryItem";
 import { Loading } from "../loading/loading";
 import { Error } from "../errorComponent/error";
@@ -16,8 +20,8 @@ export function Gallery() {
     };
   }, []);
 
-  const images = useSelector((state) => state.gallery.images);
-  const loading = useSelector((state) => state.gallery.status);
+  const images = useSelector(selectImages);
+  const loading = useSelector(selectStatus);
 
   const [page, setPage] = useState(1);
   const [fetching, setFetching] = useState(true);
